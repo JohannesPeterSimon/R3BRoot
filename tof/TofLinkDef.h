@@ -51,6 +51,13 @@
 #pragma link C++ class R3BPtofCal2Hit+;
 #pragma link C++ class R3BPtofHitPar+;
 #pragma link C++ class R3BPtofParFact+;
+#pragma link C++ class R3BTofContFactS473+;
+#pragma link C++ class R3BTofdCal2HistoParS473+;
+#pragma link C++ class R3BTofdCal2HistoS473+;
+#pragma link C++ class R3BTofdCal2HitParS473+;
+#pragma link C++ class R3BTofdCal2HitS473+;
+#pragma link C++ class R3BTofdGlobalParS473+;
+#pragma link C++ class R3BTofdHit2HitChargeS473+;
 
 #endif
 

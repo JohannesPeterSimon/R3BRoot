@@ -75,6 +75,13 @@ R3BTofdContFact.cxx
 R3BTofdDigiPar.cxx
 R3BPtofMapped2CalPar.cxx
 R3BPtofMapped2Cal.cxx
+R3BTofContFactS473.cxx
+R3BTofdCal2HistoS473.cxx
+R3BTofdCal2HistoParS473.cxx
+R3BTofdCal2HitParS473.cxx
+R3BTofdCal2HitS473.cxx
+R3BTofdGlobalParS473.cxx
+R3BTofdHit2HitChargeS473.cxx
 calibration/R3BPtofCal2HitPar.cxx
 calibration/R3BPtofCal2Hit.cxx
 calibration/R3BPtofHitPar.cxx

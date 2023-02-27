@@ -17,9 +17,10 @@
 // ----------------------------------------------------------------
 
 #include "R3BTofdMapped2CalPar.h"
-#include <FairRootManager.h>
+#include "FairRootManager.h"
 
 #include "TClonesArray.h"
+#include <iostream>
 
 #include "FairLogger.h"
 #include "FairRuntimeDb.h"
@@ -106,6 +107,8 @@ void R3BTofdMapped2CalPar::Exec(Option_t* option)
 {
     Int_t nHits = fMapped->GetEntries();
 
+	LOG(debug) << "Hits in Mapped: " << nHits << endl;
+
     // Loop over mapped hits
     for (Int_t i = 0; i < nHits; i++)
     {
@@ -125,11 +128,14 @@ void R3BTofdMapped2CalPar::Exec(Option_t* option)
         }
 
         Int_t edge = mapped->GetSideId() * 2 + mapped->GetEdgeId() - 2; // 1..4
-        fEngine->Fill(mapped->GetDetectorId(), mapped->GetBarId(), edge, mapped->GetTimeFine());
+		LOG(debug) << mapped->GetDetectorId() << " / " << mapped->GetBarId() << endl;
+		fEngine->Fill(mapped->GetDetectorId(), mapped->GetBarId(), edge, mapped->GetTimeFine());
     }
 
     nHits = fMappedTrigger->GetEntries();
 
+	nHits = 0; //For some reason there are hundreds of trigger hits in the file with paddle number 0.
+	LOG(debug) << "Hits in Trigger: " << nHits << endl;
     // Loop over mapped triggers
     for (Int_t i = 0; i < nHits; i++)
     {
